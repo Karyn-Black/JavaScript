@@ -1,3 +1,9 @@
+// Friend Dates and Movie Tickets JS
+let ticketNumber = 3;
+let ticketCosts = 14;
+let ticketTotal = ticketNumber * ticketCosts;
+
+
 // Clothes Shopping and Bank Account JS
 const priceShirt = 35;
 const pricePants = 75;
@@ -19,6 +25,11 @@ if (bankAccountLast >= 0) {
 //   document.getElementById("addJacket").innerText = "False";
 }
 
+
+// Enter Text into HTML
+document.getElementById("ticketNum").innerText = "Tickets: " + ticketNumber;
+document.getElementById("ticketCost").innerText = "Cost: $" + ticketCosts;
+document.getElementById("ttCost").innerText = "Total: $" + ticketTotal;
 document.getElementById("bank").innerText = "$" + bankAccountAfter;
 document.getElementById("addJacket").innerText = "Add Jacket: " + addJacket;
 
