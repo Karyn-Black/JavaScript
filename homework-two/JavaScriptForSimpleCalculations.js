@@ -8,12 +8,17 @@ let bankAccountBefore = 235.87;
 let bankAccountAfter = bankAccountBefore - priceShirt - pricePants - priceShoes;
 
 let bankAccountLast = (bankAccountAfter - priceJacket);
+let addJacket;
 if (bankAccountLast >= 0) {
   console.log("True, you DO have enough funds to add the jacket");
-  let addJacket = true;
+  addJacket = true;
 //   document.getElementById("addJacket").innerText = "True";
 } else {
   console.log("False, you do NOT have enough funds to add the jacket");
-  let addJacket = false;
+  addJacket = false;
 //   document.getElementById("addJacket").innerText = "False";
 }
+
+document.getElementById("bank").innerText = "$" + bankAccountAfter;
+document.getElementById("addJacket").innerText = "Add Jacket: " + addJacket;
+
