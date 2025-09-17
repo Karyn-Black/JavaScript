@@ -7,4 +7,11 @@ const priceJacket = 70;
 let bankAccountBefore = 235.87;
 let bankAccountAfter = bankAccountBefore - priceShirt - pricePants - priceShoes;
 
-let bankAccountLast = ((bankAccountAfter - priceJacket) >= 0);
+let bankAccountLast = (bankAccountAfter - priceJacket);
+if (bankAccountLast >= 0) {
+  console.log("True, you DO have enough funds to add the jacket");
+  document.getElementById("addJacket").innerText = "True";
+} else {
+  console.log("False, you do NOT have enough funds to add the jacket");
+  document.getElementById("addJacket").innerText = "False";
+}
