@@ -28,9 +28,11 @@ if (bankAccountLast >= 0) {
 
 // Professor Rector and Pizzas
 let pizzas = 4;
-let studentEatNumber = 2.5;
+let studentNumberEatAverage = 2.5;
 const slicePerPizza = 8;
-let professorRector = 0;
+let studentNumberTotalFeed = (pizzas * slicePerPizza) / studentNumberEatAverage;
+// studentNumberTotalFeed = studentNumberTotalFeed % 0;
+let professorRector = (pizzas * slicePerPizza) % studentNumberEatAverage;
 
 
 // Enter Text into HTML
@@ -39,6 +41,6 @@ document.getElementById("ticketCost").innerText = "Cost: $" + ticketCosts;
 document.getElementById("ttCost").innerText = "Total: $" + ticketTotal;
 document.getElementById("bank").innerText = "$" + bankAccountAfter;
 document.getElementById("addJacket").innerText = "Add Jacket: " + addJacket;
-document.getElementById("profPizza").innerText = "Students: " + pizzas;
-document.getElementById("profRector").innerText = "Rector: " + slicePerPizza;
+document.getElementById("profPizza").innerText = "Students: " + studentNumberTotalFeed;
+document.getElementById("profRector").innerText = "Rector: " + professorRector;
 
