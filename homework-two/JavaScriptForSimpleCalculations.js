@@ -1,6 +1,7 @@
 // Friend Dates and Movie Tickets JS
 let ticketNumber = 3;
 let ticketCosts = 14;
+
 let ticketTotal = ticketNumber * ticketCosts;
 
 
@@ -46,6 +47,15 @@ let buffetDrinks = 3;
 let barReceipt = (costAdult * buffetAdult) + (costChild * buffetChild) + (costDrinks * buffetDrinks);
 
 
+// Weekly Tip Average Earned JS
+let week1 = 202.45;
+let week2 = 134.97;
+let week3 = 256.63;
+let week4 = 178.22;
+
+let averageTips = (week1 + week2 + week3 + week4) / 4;
+
+
 // Enter Text into HTML
 document.getElementById("ticketNum").innerText = "Tickets: " + ticketNumber;
 document.getElementById("ticketCost").innerText = "Cost: $" + ticketCosts;
@@ -55,4 +65,5 @@ document.getElementById("addJacket").innerText = "Add Jacket: " + addJacket;
 document.getElementById("profPizza").innerText = "Students: " + studentNumberTotalFeed;
 document.getElementById("profRector").innerText = "Rector: " + professorRector;
 document.getElementById("Monty").innerText = "$" + barReceipt;
+document.getElementById("tips").innerText = "$" + averageTips;
 
