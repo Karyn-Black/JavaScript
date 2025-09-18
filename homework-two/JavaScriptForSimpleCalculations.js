@@ -26,13 +26,24 @@ if (bankAccountLast >= 0) {
 }
 
 
-// Professor Rector and Pizzas
+// Professor Rector and Pizzas JS
 let pizzas = 4;
 let studentNumberEatAverage = 2.5;
 const slicePerPizza = 8;
 let studentNumberTotalFeed = (pizzas * slicePerPizza) / studentNumberEatAverage;
 // studentNumberTotalFeed = studentNumberTotalFeed % 0;
 let professorRector = (pizzas * slicePerPizza) % studentNumberEatAverage;
+
+
+// Monty's Mega Bar Bill JS
+const costAdult = 12;
+const costChild = 6;
+const costDrinks = 1.50;
+let buffetAdult = 2;
+let buffetChild = 1;
+let buffetDrinks = 3;
+
+let barReceipt = (costAdult * buffetAdult) + (costChild * buffetChild) + (costDrinks * buffetDrinks);
 
 
 // Enter Text into HTML
@@ -43,4 +54,5 @@ document.getElementById("bank").innerText = "$" + bankAccountAfter;
 document.getElementById("addJacket").innerText = "Add Jacket: " + addJacket;
 document.getElementById("profPizza").innerText = "Students: " + studentNumberTotalFeed;
 document.getElementById("profRector").innerText = "Rector: " + professorRector;
+document.getElementById("Monty").innerText = "$" + barReceipt;
 
