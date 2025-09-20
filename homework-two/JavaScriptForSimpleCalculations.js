@@ -31,7 +31,7 @@ if (bankAccountLast >= 0) {
 let pizzas = 4;
 let studentNumberEatAverage = 2.5;
 const slicePerPizza = 8;
-let studentNumberTotalFeed = (pizzas * slicePerPizza) / studentNumberEatAverage;
+let studentNumberTotalFeed = Math.trunc((pizzas * slicePerPizza) / studentNumberEatAverage);
 // studentNumberTotalFeed = studentNumberTotalFeed % 0;
 let professorRector = (pizzas * slicePerPizza) % studentNumberEatAverage;
 
