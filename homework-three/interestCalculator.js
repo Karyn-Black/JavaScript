@@ -1,10 +1,10 @@
 // Define the Variables
 let formulaPrinciple = 9000;
 let formulaRate = 2.56;
-formulaRate = formulaRate / 100;
+let formulaRateNew = formulaRate / 100;
 let formulaTime = 8;
 let formulaTotalOwed;
-// formulaTotalOwed = formulaPrinciple(1+formulaRate*formulaTime);
+// formulaTotalOwed = formulaPrinciple(1+formulaRateNew*formulaTime);
 let formulaTotalInterest;
 // formulaTotalInterest = formulaTotalOwed-formulaPrinciple;
 
