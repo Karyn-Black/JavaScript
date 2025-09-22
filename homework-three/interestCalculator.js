@@ -1,8 +1,8 @@
 // Define the Variables
-let formulaPrinciple = 10000;
-let formulaRate = 2.56;
+let formulaPrinciple = 1;
+let formulaRate = 0.01;
 let formulaRateNew = formulaRate / 100;
-let formulaTime = 8;
+let formulaTime = 10;
 let formulaTotalOwed = formulaPrinciple * (1+formulaRateNew*formulaTime);
 formulaTotalOwed = formulaTotalOwed.toFixed(2);
 let formulaTotalInterest;
