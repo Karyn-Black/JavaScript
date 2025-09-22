@@ -6,12 +6,17 @@ let formulaTime = 8;
 let formulaTotalOwed = formulaPrinciple * (1+formulaRateNew*formulaTime);
 formulaTotalOwed = formulaTotalOwed.toFixed(2);
 let formulaTotalInterest;
-formulaTotalInterest = formulaTotalOwed-formulaPrinciple;
+formulaTotalInterest = formulaTotalOwed - formulaPrinciple;
 formulaTotalInterest = formulaTotalInterest.toFixed(2);
+
 
 // Enter Text into HTML
 document.getElementById("principle").innerText = "$" + formulaPrinciple;
 document.getElementById("rate").innerText = formulaRate + "%";
-document.getElementById("time").innerText = formulaTime + " years";
+if (formulaTime == 1) {
+    document.getElementById("time").innerText = formulaTime + " year";
+} else {
+    document.getElementById("time").innerText = formulaTime + " years";
+}
 document.getElementById("interest").innerText = "$" + formulaTotalInterest;
 document.getElementById("owed").innerText = "$" + formulaTotalOwed;
