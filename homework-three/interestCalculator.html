@@ -8,11 +8,23 @@
 <body>
     <h1>Interest Calculator</h1>
     <h2>Enter the Numbers</h2>
-    <h4>Principle: $</h4>
+    <!-- <h4>Principle: $</h4>
     <h4>Interest Rate (percentage): </h4>
-    <h4>Time (in years): </h4>
-    <input type="button" value="Calculate" onclick="calculate()">
+    <h4>Time (in years): </h4> -->
 
+    <h4>
+    <form action="/action_page.php">
+        <label for="fname">Principle: $</label>
+        <input type="text" id="fname" name="fname" value="1"><br>
+        <label for="lname">Interest Rate: </label>
+        <input type="text" id="lname" name="lname" value="0.1"> %<br>
+        <label for="lname">Time: </label>
+        <input type="text" id="lname" name="lname" value="10"> years<br><br>
+        <!-- <input type="submit" value="Submit"> -->
+        <input type="submit" value="Calculate" onclick="calculate()">
+    </form>
+    </h4>
+    
     <h2>Your Results</h2>
     <p>With a beginning principal of <span id="principle">$</span> and with a growth rate of 
         <span id="rate">%</span> for <span id="time">0 years</span>, </p>
