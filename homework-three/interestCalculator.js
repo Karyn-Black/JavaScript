@@ -1,8 +1,14 @@
 // Define the Variables
-let formulaPrinciple = 1;
+// let formulaPrinciple = 1;
 let formulaRate = 0.01;
 let formulaRateNew = formulaRate / 100;
 let formulaTime = 10;
+
+// Form Inputs
+let formulaPrinciple = document.getElementById("inputPrinciple");
+formulaPrinciple.textContent = 1;
+
+// Calculations for Paragraph
 let formulaTotalOwed = formulaPrinciple * (1+formulaRateNew*formulaTime);
 formulaTotalOwed = formulaTotalOwed.toFixed(2);
 let formulaTotalInterest;
@@ -20,7 +26,7 @@ formulaTotalInterest = formulaTotalInterest.toFixed(2);
 
 
 // Enter Text into HTML
-document.getElementById("principle").innerText = "$" + formulaPrinciple;
+document.getElementById("paragraphPrinciple").innerText = "$" + formulaPrinciple;
 document.getElementById("rate").innerText = formulaRate + "%";
 if (formulaTime == 1) {
     document.getElementById("time").innerText = formulaTime + " year";
