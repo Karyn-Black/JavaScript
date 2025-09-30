@@ -160,28 +160,52 @@ console.log(aar_2d[1][2]);
 console.log(aar_2d[0][5]);
 
 
-// 3D Arrays - Array of Arrays of Arrays, 
+// 3D Arrays - Array of Arrays of Arrays, use []
 //             0, 1, 2 Columns
-let aar_3d = [
-                [
-                    [1, 2], [3, 4]      // treat this like a 2D array
-                ]                       // 0 Row
-                [
-                    [4, 5], [6, 7]      // 1 Row
-                ]
-                [
-                    [7, 8], [9, 10]
-                ]
-             ];                         // 2 Row
-console.log(aar_3d);
-console.log(aar_3d[0][0][0]);
-console.log(aar_3d[1][2]);
-console.log(aar_3d[0][5]);
+// let aar_3d = [
+//                 [
+//                     [1, 2], [3, 4]      // treat this like a 2D array
+//                 ]                       // 0 Row
+//                 [
+//                     [4, 5], [6, 7]      // 1 Row
+//                 ]
+//                 [
+//                     [7, 8], [9, 10]
+//                 ]
+//              ];                         // 2 Row
+// console.log(aar_3d);
+// console.log(aar_3d[0][0][0]);
+// console.log(aar_3d[1][2]);
+// console.log(aar_3d[0][5]);
 
 
-// Object - Collection of key-value pairs
+// Object - Collection of key-value pairs, use {}
 let person = {
     name: "Alex",
-    age: 21,
-
+    age: 30,
+    city: "Indy"
 };
+console.log(person);
+
+let studentObj1 = {
+    name: "William",
+    age: 30,
+    isEnrolled: true
+};
+console.log("Student Details: ", studentObj1);
+console.log("Student Details: ", studentObj1.name); // Dot Notation is the Industry Standard
+
+let arr = [10, 20, 30];
+console.log(arr.length); // length is property of array
+console.log(arr);
+console.log("Student age: ", studentObj1["age"]); // Bracket Notation is NOT Industry Standard but does the same thing as line 196
+
+// Update info
+studentObj1.age = 100;
+console.log("Updated age: ", studentObj1.age);
+
+// Add New Property
+studentObj1.grade = "A+++"
+console.log("Added New Property of Grade: ", studentObj1.grade);
+
+
