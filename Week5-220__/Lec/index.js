@@ -160,26 +160,23 @@ console.log(aar_2d[1][2]);
 console.log(aar_2d[0][5]);
 
 
-// 3D Arrays - Array of Arrays of Arrays, use []
-//             0, 1, 2 Columns
-// let aar_3d = [
-//                 [
-//                     [1, 2], [3, 4]      // treat this like a 2D array
-//                 ]                       // 0 Row
-//                 [
-//                     [4, 5], [6, 7]      // 1 Row
-//                 ]
-//                 [
-//                     [7, 8], [9, 10]
-//                 ]
-//              ];                         // 2 Row
-// console.log(aar_3d);
-// console.log(aar_3d[0][0][0]);
-// console.log(aar_3d[1][2]);
-// console.log(aar_3d[0][5]);
+// 3D Arrays - Array of Arrays of Arrays, use [], arrays are stored in unicode (alphabetical order)
+            // 0, 1, 2 Columns
+let aar_3d = [
+                [
+                    [1, 2], [3, 4]      // treat this like a 2D array
+                ],                       // 0 Row
+                [
+                    [5, 6], [7, 8]      // 1 Row
+                ],
+             ];                         // 2 Row
+console.log(aar_3d);
+console.log(aar_3d[0][0][0]);
+console.log(aar_3d[1][2]);
+console.log(aar_3d[0][5]);
 
 
-// Object - Collection of key-value pairs, use {}
+// Object - Collection of key-value pairs, use {}, objects are not stored in 1 specific order
 let person = {
     name: "Alex",
     age: 30,
@@ -208,4 +205,141 @@ console.log("Updated age: ", studentObj1.age);
 studentObj1.grade = "A+++"
 console.log("Added New Property of Grade: ", studentObj1.grade);
 
+// Delete Property
+delete studentObj1.isEnrolled;
+console.log("Deleted isEnrolled Property: ", studentObj1);
 
+// Nested Object - something BETWEEN something else
+let classroomObj1 = {
+    roomNumber: 252,
+    students: {
+        student1: {name: "Abe", age: 45},
+        student2: {name: "Buzz", age: 40}
+    }
+};
+console.log("Classroom details: ", classroomObj1);
+console.log("Student details: ", classroomObj1.students);
+console.log("Student1 details: ", classroomObj1.students.student1);
+console.log("Student2 age: ", classroomObj1.students.student2.age);
+
+
+
+// Loops
+console.log("------------------ For Loop Section ------------------");
+
+for(let i=0; i<10; i++) { // Start Condition; Stop Condition; Update Condition
+    console.log("iteration: ", i);
+}
+
+for(let i=0; i<10; i++) {
+    console.log("New iteration: ", i++);
+}
+
+// i = 0
+// i+1+1 = 2
+// i+1+1 = 4
+// i+1+1 = 6
+// i+1+1 = 8
+
+// Add the numbers 0 to 9 together
+let total = 0
+
+for(let i=0; i<10; i++) {
+    total = total + i;
+    console.log("Newest iteration: ", total);
+}
+console.log("total: ", total);
+
+
+console.log("------------------ For Loop Section with J ------------------");
+let j = 1;
+for(j=1; j<=10; j++){
+    console.log("J iteration", j++);
+}
+
+// Nested Loop
+console.log("------------------ For Loop Section with I*J ------------------");
+for(let i=1; i<10; i++) {
+    for(j=1; j<=10; j++) {
+        console.log(i, "*", j, "=", i*j);
+    }
+    console.log("------ End of Inner J Loop Number", i, "------")
+}
+
+
+// While Loop, if condition is not met will NOT be done even once
+console.log("------------------ While Loop Section ------------------");
+
+let k = 1;
+while(k < 3){
+    console.log("K while iteration", k);
+    k++;
+}
+
+let l = 10;
+while(l%10 == 0 && l <= 100){
+    console.log("L while iteration", l);
+    l+=10;
+}
+
+
+// Do White Loop, will always be done once
+console.log("------------------ Do While Loop Section ------------------");
+let m = 0;
+do{
+    console.log("M do while iteration", m);
+    m++;
+}while(m<10);
+
+
+// Conditional Statements:
+console.log("------------------ if-else Conditional Statement Section ------------------");
+// if-else Conditional Statement
+let score = 80;
+
+if(score >= 90){
+    console.log("Grade A");
+} else {
+    console.log("Grade B");
+}
+
+score =65;
+if(score >= 90){
+    console.log("Grade A");
+} else if(score >= 80){
+    console.log("Grade B");
+} else if(score >= 70){
+    console.log("Grade C");
+} else {
+    console.log("Grade D");
+};
+
+
+// switch-case Conditional Statements
+console.log("------------------ switch-case Conditional Statement Section ------------------");
+
+let day = 3;
+switch(day) {
+    case 1:
+        console.log("Monday");
+        break;
+    case 2:
+        console.log("Tuesday");
+        break;
+    case 3:
+        console.log("Wednesday");
+        break;
+    case 4:
+        console.log("Thursday");
+        break;
+    case 5:
+        console.log("Friday");
+        break;
+    default:
+        console.log("Weekend");
+}
+
+// Multiple Choice section is 20 questions in 30 minutes
+// Debugging section 10 question in 25 minutes
+// Problem Solving section is 1 question in 15 minutes
+// Create You section is 2 questions in 20 minutes
