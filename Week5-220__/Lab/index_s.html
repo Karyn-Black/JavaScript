@@ -98,55 +98,93 @@
 
 
         // // Q1: Print first and last elements of the array
-        // let cakePrices = [15, 25, 10, 30];
+        let cakePrices = [15, 25, 10, 30];
         // // TODO: Fill in the code to get the first and last element
         // // Hint: First element is at index 0, last element is at index length-1
-        // document.getElementById("ans1").innerHTML = /* YOUR Ans */;
+        document.getElementById("ans1").innerHTML = cakePrices[0] + " is the first number. " + cakePrices[3] + " is the last number.";
 
         // // Q2: Add a new fruit at the end
-        // let fruits = ["Apple", "Orange", "Banana"];
+        let fruits = ["Apple", "Orange", "Banana"];
         // // TODO: Use a method to add "Strawberry" at the end
-        // document.getElementById("ans2").innerHTML = /* YOUR Ans */;
+        fruits.push("Strawberry");
+        document.getElementById("ans2").innerHTML = fruits.join(", ");
 
         // // Q3: Remove the top card from a stack
-        // let cards = ["Ace", "King", "Queen"];
+        let cards = ["Ace", "King", "Queen"];
         // // TODO: Remove last element using a method and print it
-        // document.getElementById("ans3").innerHTML = /* YOUR Ans */;
+        cards.pop();
+        document.getElementById("ans3").innerHTML = cards.join(", ");
 
         // // Q4: Add a hero to the beginning
-        // let heroes = ["Spider-Man", "Iron Man"];
+        let heroes = ["Spider-Man", "Iron Man"];
         // // TODO: Use a method to add "Wonder Woman" at the start
-        // document.getElementById("ans4").innerHTML = /* YOUR Ans */;
+        heroes.unshift("Wonder Woman");
+        document.getElementById("ans4").innerHTML = heroes.join(", ");
 
         // // Q5: Remove first two elements and print them
-        // let numbers = [100, 200, 300, 400];
-        // // TODO: Use a method to remove first two elements and show removed ones
-        // document.getElementById("ans5").innerHTML = /* YOUR Ans */;
+        let numbers = [100, 200, 300, 400];
+        // // // TODO: Use a method to remove first two elements and show removed ones
+        numbers = numbers.slice(0,2);
+        document.getElementById("ans5").innerHTML = numbers;
 
         // // Q6: Access element in a 2D array
-        // let zoo = [["Lion","Tiger"],["Elephant","Giraffe"]];
+        let zoo = [["Lion","Tiger"],["Elephant","Giraffe"]];
         // // TODO: Access the element at row 1, column 0
-        // document.getElementById("ans6").innerHTML = /* YOUR Ans */;
+        document.getElementById("ans6").innerHTML = zoo[1][0];
 
         // // Q7: Access element in a 3D array
-        // let chocolateBox = [[["Dark","Milk"],["White","Hazelnut"]],[["Caramel","Nut"],["Fruit","Mint"]]];
+        let chocolateBox = [[["Dark","Milk"],["White","Hazelnut"]],[["Caramel","Nut"],["Fruit","Mint"]]];
         // // TODO: Access layer 0, row 1, column 0
-        // document.getElementById("ans7").innerHTML = /* YOUR Ans */;
+        document.getElementById("ans7").innerHTML = chocolateBox[0][1][0];
 
         // // Q8: Update object property
-        // let player = {name: "Alex", score: 70, level: 3};
+        let player = {name: "Alex", score: 70, level: 3};
         // // TODO: Increase score by 10 and print new score
-        // document.getElementById("ans8").innerHTML = /* YOUR Ans */;
+        player.score = player.score + 10;
+        document.getElementById("ans8").innerHTML = ("Updated score: ", player.score);
 
         // // Q9: Loop and filter numbers greater than 3
-        // let nums = [1,2,3,4,5];
+        let nums = [1,2,3,4,5];
         // // TODO: Loop through the array, select numbers > 3, and print them
-        // document.getElementById("ans9").innerHTML = /* YOUR Ans */;
+        let numsNew = [];
+        for(let i=0; i<nums.length; i++) {
+            if (nums[i] > 3){
+                numsNew.push(nums[i])
+            };
+            console.log("Numbers greater than 3: ", numsNew);
+        };
+        document.getElementById("ans9").innerHTML = numsNew;
 
         // // Q10: Use switch to print day name
-        // let day = 5;
+        let day = 5;
         // // TODO: Write a switch statement to print the correct day name
-        // document.getElementById("ans10").innerHTML = /* YOUR Ans */;
+        let dayName = " ";
+        switch(day) {
+            case 1:
+                dayName = "Sunday";
+                break;
+            case 2:
+                dayName = ("Monday");
+                break;
+            case 3:
+                dayName = ("Tuesday");
+                break;
+            case 4:
+                dayName = ("Wednesday");
+                break;
+            case 5:
+                dayName = ("Thursday");
+                break;
+            case 6:
+                dayName = ("Friday");
+                break;
+            case 7:
+                dayName = ("Saturday");
+                break;
+            default:
+                dayName = ("Unknown day");
+        }
+        document.getElementById("ans10").innerHTML = dayName;
 
     </script>
 </body>
