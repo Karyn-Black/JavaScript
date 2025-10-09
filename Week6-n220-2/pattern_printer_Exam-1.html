@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JavaScript Pattern Printer</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; }
+        input, button { margin: 5px; }
+        pre { 
+            background-color: #f4f4f4; 
+            padding: 10px; 
+            border: 1px solid #ccc; 
+        }
+    </style>
+</head>
+<body>
+    <h2>Pattern Printer</h2>
+    
+    <!-- Input field to enter number of rows -->
+    <label for="rows">Enter number of rows (n):</label>
+    <input type="number" id="rows" min="1" value="5">
+    <br>
+  
+    <!-- Buttons to trigger different pattern printing -->
+    <button onclick="printThinPyramid()">Thin Pyramid</button>
+    <button onclick="printRightAngledPyramid()">Right-Angled Pyramid</button>
+    <button onclick="printReversePyramid()">Reverse Pyramid</button>
+    <button onclick="printReverseThinPyramid()">Reverse Thin Pyramid</button>
+    
+    <!-- Area where pattern will be displayed -->
+    <pre id="output"></pre>
+
+    <script>
+        // ======================================================
+        // FUNCTION: Inverted Pyramid
+        // ======================================================
+        function printInvertedPyramid() {
+            // Step 1: Get the number of rows from user input
+            let n = parseInt(document.getElementById("rows").value);
+            // Step 2: Initialize an empty string to build the pattern
+            let result = "";
+
+            // Step 3: Loop through each row (i = 0 to n-1)
+            for (let i = 0; i < n; i++) {
+                // Step 3a: Add spaces first
+                // Why? To move the stars to the right and create inverted pyramid shape
+                // Number of spaces increases as we go down the rows (i spaces in row i)
+                result += " ".repeat(i);
+
+                // Step 3b: Add stars after the spaces
+                // Why? The number of stars decreases each row (n - i stars in row i)
+                // This creates the inverted effect
+                result += "*".repeat(n - i);
+
+                // Step 3c: Add newline character to move to next row
+                result += "\n";
+            }
+
+            // Step 4: Display the pattern in the <pre> tag
+            document.getElementById("output").textContent = result;
+        }
+
+        // ======================================================
+        // FUNCTION: Thin Pyramid
+        // ======================================================
+        function printThinPyramid() {
+            let n = parseInt(document.getElementById("rows").value);
+            let result = "";
+
+            // Loop through each row (i = 0 to n-1)
+            for (let i = 0; i < n; i++) {
+                // Step 1: Add spaces before stars
+                // Why? To center-align the stars for pyramid shape
+                // Formula: n - i - 1 spaces
+                // Example: row 0 => n-1 spaces, row 1 => n-2 spaces, ..., row n-1 => 0 spaces
+                result += " ".repeat(n - i - 1);
+
+                // Step 2: Add stars for this row
+                // Why? Stars increase by 2 each row to maintain pyramid symmetry
+                // Formula: 2*i + 1 stars
+                // Explanation:
+                // - Row 0: 1 star
+                // - Row 1: 3 stars
+                // - Row 2: 5 stars
+                // - Row i: 2*i+1 stars
+                result += "*".repeat(2 * i + 1);
+
+                // Step 3: Move to next row
+                result += "\n";
+            }
+
+            // Display the pattern
+            document.getElementById("output").textContent = result;
+        }
+
+        // ======================================================
+        // FUNCTION: Right-Angled Pyramid
+        // ======================================================
+        function printRightAngledPyramid() {
+            let n = parseInt(document.getElementById("rows").value);
+            let result = "";
+
+            // Loop through each row (i = 1 to n)
+            for (let i = 1; i <= n; i++) {
+                // Add stars equal to current row number
+                // Row 1: 1 star, Row 2: 2 stars, ..., Row n: n stars
+                // No spaces needed because it is left-aligned
+                result += "*".repeat(i);
+
+                // Move to next row
+                result += "\n";
+            }
+
+            document.getElementById("output").textContent = result;
+        }
+
+        // ======================================================
+        // FUNCTION: Reverse Pyramid
+        // ======================================================
+        function printReversePyramid() {
+            let n = parseInt(document.getElementById("rows").value);
+            let result = "";
+
+            // Loop from row n down to 1
+            for (let i = n; i >= 1; i--) {
+                // Add stars equal to row number
+                // Row n: n stars, Row n-1: n-1 stars, ..., Row 1: 1 star
+                // This creates the reverse pyramid
+                result += "*".repeat(i);
+
+                // Move to next row
+                result += "\n";
+            }
+
+            document.getElementById("output").textContent = result;
+        }
+
+        // ======================================================
+        // FUNCTION: Reverse Thin Pyramid
+        // ======================================================
+        function printReverseThinPyramid() {
+            let n = parseInt(document.getElementById("rows").value);
+            let result = "";
+
+            // Loop from row n-1 down to 0
+            for (let i = n - 1; i >= 0; i--) {
+                // Step 1: Add spaces first
+                // Why? To center-align the decreasing stars
+                // Spaces increase as stars decrease
+                result += " ".repeat(n - i - 1);
+
+                // Step 2: Add stars for this row
+                // Stars decrease by 2 each row
+                result += "*".repeat(2 * i + 1);
+
+                // Step 3: Move to next row
+                result += "\n";
+            }
+
+            document.getElementById("output").textContent = result;
+        }
+
+        // ======================================================
+        // OPTIONAL: Function accepting 'n' as argument
+        // This demonstrates passing n directly instead of reading input
+        // ======================================================
+        function printThinPyramidWithArgument(n) {
+            let result = "";
+
+            for (let i = 0; i < n; i++) {
+                // Same logic as printThinPyramid
+                result += " ".repeat(n - i - 1) + "*".repeat(2 * i + 1) + "\n";
+            }
+
+            document.getElementById("output").textContent = result;
+        }
+
+        // ======================================================
+        // ADDITIONAL LOGIC EXPLANATION:
+        // ======================================================
+        /*
+        1. Outer loop: Controls number of rows (vertical movement)
+        2. Spaces:
+            - Added before stars to control horizontal alignment
+            - Formula depends on pattern type (increasing, decreasing)
+        3. Stars:
+            - Number of stars determines the shape (pyramid, inverted pyramid, etc.)
+            - Thin pyramids use odd numbers: 2*i+1
+            - Right-angled pyramids increase by 1 each row
+        4. Newline '\n':
+            - Moves to next row
+            - Important because <pre> respects whitespace and newlines
+        5. Pattern Logic:
+            - Inverted Pyramid: stars decrease, spaces increase
+            - Thin Pyramid: stars increase odd numbers, spaces decrease
+            - Reverse Thin Pyramid: stars decrease odd numbers, spaces increase
+            - Right-Angled Pyramid: stars increase, left-aligned
+        6. Why use repeat()?
+            - Simplifies inner loops for beginners
+            - Can be replaced by nested loops for Java-style teaching
+        7. Math Behind Formulas:
+            - For thin pyramid: row i -> 2*i+1 stars, n-i-1 spaces
+            - This centers the stars perfectly for each row
+        8. Students can experiment with n to see how pattern changes
+        */
+    </script>
+</body>
+</html>
