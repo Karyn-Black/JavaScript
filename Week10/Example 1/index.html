@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM and Event Demo</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 20 px;
+        }
+        .greeting {
+            font-size: 20 px;
+            margin-bottom: 10 px;
+        }
+        button {
+            margin: 5 px;
+            padding: 8 px 12 px;
+            font-size: 16 px;
+            color: red;
+        }
+        #output p {
+            margin: 5 px 0 px;
+            color: green;
+        }
+    </style>
+</head>
+<body>
+    <!-- We wil manipulate this part!!! -->
+    <p class = "greeting">Hello, welcome to DOM and Event Demo</p>
+
+    <!-- Buttons for different actions -->
+    <button class = "change-color-btn">Change Text Color</button>
+    <button class = "add-item-btn">Add Paragraph</button>
+    <button class = "hover-btn">Hover Over Button</button>
+
+    <!-- Output container with the help of this we will show dynamic feedback -->
+    <div id = "output"></div>
+
+    <script src = "script.js"></script>
+</body>
+</html>
