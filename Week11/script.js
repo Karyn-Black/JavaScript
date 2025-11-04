@@ -33,3 +33,14 @@ form.addEventListener("submit", function(event){
     };
 }
 );
+
+// Validation of the form
+if(!name || !email || !password){
+    showMessage('Please fill out all of the required fields', 'error');
+    return;
+}
+
+function showMessage(text, type){
+    message.textContent = text;
+    message.className = type;
+}
