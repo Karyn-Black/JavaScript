@@ -43,15 +43,41 @@ form.addEventListener("submit", function(event){
         return;
     }
 
-    // If all of the validation passed, show a success message
-    // Template literal (``) allows us to write multi-line strings with embedded expressions like ${js_var}
-    showMessage(`Hello ${name}! Your inputted email was ${email} and your password was ${password} and your age was ${age}. 
-        You have submitted the form successfully`, 'success');
-    
-    // To give a clean interface after submission, we clear all the input fields
-    // setTimeout() delays the form reset by 1.5 seconds
-    // So that the user can first see the message
-    setTimeout(() => form.reset(), 1500);
+    // Create a JavaScript object to store the form data
+    const userData = {
+        name: name,
+        email: email,
+        password: password,
+        age: age || 'Not Selected',
+        country: country || 'Not Selected',
+        termsAccepted: termsChecked,
+    };
+
+    // Convert this object to a JSON
+    // The stringify() method converts a JavaScript object or value to a JSON string
+    // null and 2 are optional parameters
+    // null means no indentation - it means don't filter or transform properties; use default behavior
+    // 2 means 2 spaces arguments
+    const jsonData = JSON.stringify(userData, null, 2);
+    message.className = 'success';
+    message.textContent = `User Data: ${jsonData}`;
+
+    // We want to downlad JSON data as a file
+    // blob = Binary Large OBject
+    // Create a blob object to hold the JSON data
+    const blob = new Blob([jsonData], {type: 'application/json'});
+
+    // Create a download link that is an anchor tag. It is used to download files
+    const downloadLink = document.createElement('a');
+    downloadLink.href = URL.createObjectURL(blob);
+    downloadLink.download = 'userData.json'; // Name of downloaded file
+
+    // 
+    document.body.appendChild(downloadLink);
+    downloadLink.click();
+    document.body.removeChild(downloadLink);
+
+    setTimeout(() => form.reset(), 2000);
 }
 );
 
