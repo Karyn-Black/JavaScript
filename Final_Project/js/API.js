@@ -16,7 +16,7 @@ async function nameGet() {
         <th>Greek Letters</th>
         <th>Sumerian</th>
         <th>Sanskrit</th>
-        <th>Liked</th>
+        <th>Pic</th>
       </tr>
     `;
 
@@ -41,7 +41,6 @@ async function nameGet() {
               height="20"
             />
           </td>
-          <td><label><input type="radio" name= "likeSun" value="likeSun" placeholder="likeSun" >Liked</label></td>
         </tr>
       `;
     }
@@ -49,6 +48,25 @@ async function nameGet() {
     console.warn(e);
   }
 }
+
+
+// async function likeSelection() {
+//    var element = document.getElementById("mercury");
+//    element.classList.toggle("likedImg");
+// }
+
+
+// // Extract radio button values
+// let likeSelection='';
+//     const likeSelectionRadios = document.getElementsByName('liked');
+
+//     for(let radio of likeSelectionRadio){
+//         if(radio.checked){
+//             liked = radio.value;
+//             break;
+//         }
+//     };
+
 
 // async function likeGet() {
 //   picture.onclick = likePlanet;
@@ -62,3 +80,4 @@ async function nameGet() {
 // }
 
 nameGet();
+likeSelection();

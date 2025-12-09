@@ -36,12 +36,16 @@ td:nth-child(odd) {
 td.picture {
   padding-top: 5px;
   padding-bottom: 0px;
-  cursor: copy;
+  /* cursor: copy; */
 }
 
-img {
+/* img {
   opacity: 0.4;
 }
+
+.likedImg {
+  opacity: 1;
+} */
 
 th:hover {
   color: black;
