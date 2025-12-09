@@ -53,8 +53,8 @@ body a {
 }
 
 a:hover {
-  background: white;
-  color: black;
+  background: black;
+  color: white;
 }
 
 nav a:hover {

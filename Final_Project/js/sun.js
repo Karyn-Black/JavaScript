@@ -32,7 +32,7 @@ slider.value = 5;
 document.body.style.background = "#FFFFFF";
 // document.body.style.background = "url('pictures/stars_background.png')";
 document.body.style.color = "#000000";
-document.querySelector("#darkMode").classList.add("dark");
+// document.querySelector("#darkMode").classList.add("dark");
 output.innerHTML = slider.value * 20;
 
 slider.oninput = function () {
