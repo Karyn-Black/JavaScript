@@ -16,7 +16,7 @@ async function nameGet() {
         <th>Greek Letters</th>
         <th>Sumerian</th>
         <th>Sanskrit</th>
-        <th>Pic</th>
+        <th>Emoji</th>
       </tr>
     `;
 
