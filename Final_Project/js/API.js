@@ -16,7 +16,7 @@ async function nameGet() {
         <th>Greek Letters</th>
         <th>Sumerian</th>
         <th>Sanskrit</th>
-        <th>Emoji</th>
+        <th>Liked</th>
       </tr>
     `;
 
@@ -33,8 +33,9 @@ async function nameGet() {
           <td>${nameCurrent.greekLetters}</td>
           <td>${nameCurrent.sumerian}</td>
           <td>${nameCurrent.sanskrit}</td>
-          <td class="picture">
+          <td onclick='likePlanet()' class="picture ${nameCurrent.english}">
             <img
+              class="planetImg"
               src="${nameCurrent.img}"
               alt="Clipart of a planet with a Thumps Up gesture"
               width="26"
@@ -73,11 +74,20 @@ async function nameGet() {
 //   console.log(picture);
 // }
 
-// function likePlanet() {
-//   const planetName = e.currentTarget.dataset.name;
-//   console.log(planetName);
-//   localStorage.setItem(planetName.JSON.stringify(true));
-// }
+function likePlanet() {
+  const tableCell = event.currentTarget;
+  // console.log(tableCell);
+  const tableImg = tableCell.querySelector('.planetImg')
+  // const element = tableCell.closest('.planetImg');
+  // console.log(tableImg);
+  if(tableImg.classList.contains('likedImg')) {
+    tableImg.classList.remove('likedImg');
+  } else {
+      tableImg.classList.add('likedImg');
+  }
+  
+  
+}
 
 nameGet();
-likeSelection();
+// likePlanet();
