@@ -36,11 +36,12 @@ async function nameGet() {
           <td class="picture">
             <img
               src="${nameCurrent.img}"
-              alt="Cipart of a planet with a Thumps Up gesture"
+              alt="Clipart of a planet with a Thumps Up gesture"
               width="26"
               height="20"
             />
           </td>
+          <td><label><input type="radio" name= "likeSun" value="likeSun" placeholder="likeSun" >Liked</label></td>
         </tr>
       `;
     }
@@ -49,15 +50,15 @@ async function nameGet() {
   }
 }
 
-async function likeGet() {
-  picture.onclick = likePlanet;
-  console.log(picture);
-}
+// async function likeGet() {
+//   picture.onclick = likePlanet;
+//   console.log(picture);
+// }
 
-function likePlanet() {
-  const planetName = e.currentTarget.dataset.name;
-  console.log(planetName);
-  localStorage.setItem(planetName.JSON.stringify(true));
-}
+// function likePlanet() {
+//   const planetName = e.currentTarget.dataset.name;
+//   console.log(planetName);
+//   localStorage.setItem(planetName.JSON.stringify(true));
+// }
 
 nameGet();
